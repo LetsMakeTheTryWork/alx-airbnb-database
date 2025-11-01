@@ -23,3 +23,22 @@ This directory contains SQL scripts to practice **advanced queries with joins** 
 - Practice writing complex SQL queries using joins.
 - Retrieve related data across multiple tables.
 - Understand how to handle missing or unmatched data using different join types.
+
+
+
+## Subqueries Practice
+
+File: subqueries.sql
+
+Objective: Practice writing correlated and non-correlated subqueries.
+
+Queries:
+- Find properties where the average rating is greater than 4.
+- Find users who have made more than 3 bookings.
+
+## Subqueries Practice
+File: subqueries.sql
+Objective: Practice writing correlated and non-correlated subqueries.
+Queries:
+- Find properties where the average rating is greater than 4.
+- Find users who have made more than 3 bookings.
