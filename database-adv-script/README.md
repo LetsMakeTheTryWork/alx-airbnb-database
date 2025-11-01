@@ -17,6 +17,8 @@ This directory contains SQL scripts to practice **advanced queries with joins** 
 - **Property**: `property_id`, `host_id`, `name`
 - **Booking**: `booking_id`, `property_id`, `user_id`, `status`
 - **Review**: `review_id`, `property_id`, `user_id`, `rating`, `comment`
+message &review
+
 
 ## Objective
 
@@ -42,3 +44,11 @@ Objective: Practice writing correlated and non-correlated subqueries.
 Queries:
 - Find properties where the average rating is greater than 4.
 - Find users who have made more than 3 bookings.
+
+
+## Aggregations and Window Functions
+File: aggregations_and_window_functions.sql
+Objective: Use SQL aggregation and window functions to analyze data.
+Queries:
+- Find the total number of bookings made by each user using COUNT and GROUP BY.
+- Rank properties based on the total number of bookings using a window function (ROW_NUMBER or RANK).
