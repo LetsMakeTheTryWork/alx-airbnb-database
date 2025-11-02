@@ -36,3 +36,34 @@ CREATE INDEX idx_review_created_at ON Review(created_at);
 CREATE INDEX idx_message_sender_id ON Message(sender_id);
 CREATE INDEX idx_message_recipient_id ON Message(recipient_id);
 CREATE INDEX idx_message_sent_at ON Message(sent_at);
+
+
+-- ===========================================
+-- Performance Measurement Section
+-- Using EXPLAIN ANALYZE before and after indexing
+-- ===========================================
+
+-- Example query before indexing:
+-- (Run this before executing CREATE INDEX statements)
+EXPLAIN ANALYZE
+SELECT * FROM Booking
+WHERE user_id = 'U001' AND status = 'confirmed'
+ORDER BY start_date DESC;
+
+-- Example query after indexing:
+-- (Run this after executing CREATE INDEX statements)
+EXPLAIN ANALYZE
+SELECT * FROM Booking
+WHERE user_id = 'U002' AND status = 'confirmed'
+ORDER BY start_date DESC;
+
+-- Another performance test example
+EXPLAIN ANALYZE
+SELECT * FROM Property
+WHERE location = 'Nairobi' AND pricepernight < 100
+ORDER BY created_at DESC;
+
+-- And one more
+EXPLAIN ANALYZE
+SELECT * FROM User
+WHERE email = 'guest@gmail.com';
