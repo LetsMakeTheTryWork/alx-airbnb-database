@@ -1,0 +1,38 @@
+-- ===========================================
+-- Database Optimization: Index Creation Script
+-- File: database_index.sql
+-- Objective: Improve query performance by adding indexes
+-- ===========================================
+
+-- USER TABLE
+CREATE INDEX idx_user_email ON User(email);
+CREATE INDEX idx_user_role ON User(role);
+CREATE INDEX idx_user_created_at ON User(created_at);
+
+-- PROPERTY TABLE
+CREATE INDEX idx_property_host_id ON Property(host_id);
+CREATE INDEX idx_property_location ON Property(location);
+CREATE INDEX idx_property_pricepernight ON Property(pricepernight);
+CREATE INDEX idx_property_created_at ON Property(created_at);
+
+-- BOOKING TABLE
+CREATE INDEX idx_booking_property_id ON Booking(property_id);
+CREATE INDEX idx_booking_user_id ON Booking(user_id);
+CREATE INDEX idx_booking_status ON Booking(status);
+CREATE INDEX idx_booking_start_date ON Booking(start_date);
+
+-- PAYMENT TABLE
+CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
+CREATE INDEX idx_payment_method ON Payment(payment_method);
+CREATE INDEX idx_payment_date ON Payment(payment_date);
+
+-- REVIEW TABLE
+CREATE INDEX idx_review_property_id ON Review(property_id);
+CREATE INDEX idx_review_user_id ON Review(user_id);
+CREATE INDEX idx_review_rating ON Review(rating);
+CREATE INDEX idx_review_created_at ON Review(created_at);
+
+-- MESSAGE TABLE
+CREATE INDEX idx_message_sender_id ON Message(sender_id);
+CREATE INDEX idx_message_recipient_id ON Message(recipient_id);
+CREATE INDEX idx_message_sent_at ON Message(sent_at);
